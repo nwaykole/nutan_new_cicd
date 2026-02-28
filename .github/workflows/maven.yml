@@ -6,6 +6,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Code
@@ -44,6 +46,7 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           cd java-maven-sonar-argocd-helm-k8s/spring-boot-app
+          ls -l
           IMAGE_TAG="nwaykole25/cicd:${{ github.run_number }}"
           docker build -t $IMAGE_TAG .
           docker push $IMAGE_TAG
