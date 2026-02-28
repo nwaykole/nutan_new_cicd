@@ -27,8 +27,8 @@ jobs:
 
       - name: Static Code Analysis (SonarQube)
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_AUTH_TOKEN }}
-          SONAR_URL: "http://34.201.116.83:9000"
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_URL: "http://34.147.186.164:9000"
         run: |
           cd java-maven-sonar-argocd-helm-k8s/spring-boot-app
           mvn sonar:sonar \
