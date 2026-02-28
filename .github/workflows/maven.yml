@@ -44,7 +44,7 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           cd java-maven-sonar-argocd-helm-k8s/spring-boot-app
-          IMAGE_TAG="abhishekf5/ultimate-cicd:${{ github.run_number }}"
+          IMAGE_TAG="nwaykole25/cicd:${{ github.run_number }}"
           docker build -t $IMAGE_TAG .
           docker push $IMAGE_TAG
 
